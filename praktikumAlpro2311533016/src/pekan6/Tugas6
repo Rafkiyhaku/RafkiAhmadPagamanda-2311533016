@@ -1,0 +1,28 @@
+package Pekan6;
+
+import java.util.Scanner;
+
+public class Tugas6_Irfan_Trianda {
+
+	public static void main(String[] args) {
+	    Scanner scanner = new Scanner(System.in);
+	    System.out.println("input");
+	    int angka = scanner.nextInt();
+	
+	    
+	   
+            for (int i = 1; i <= angka; i++) {
+            	for(int j = 1;j<=angka ; j++) {
+                if ((i + j) % 2 == 0) {
+                    System.out.print("_");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            	System.out.println();
+     
+            }
+            scanner.close();
+        }
+    }
+

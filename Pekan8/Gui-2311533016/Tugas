@@ -1,0 +1,152 @@
+package Inputdata;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Inputdatamahasiswa extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JComboBox comboBox;
+	private JLabel lblNewLabel_4;
+	private JLabel lblNewLabel_5;
+	private JLabel lblNewLabel_6;
+	private JLabel lblNewLabel_7;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Inputdatamahasiswa frame = new Inputdatamahasiswa();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Inputdatamahasiswa() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("DATA MAHASISWA");
+		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 14));
+		lblNewLabel.setBounds(146, 11, 155, 14);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("NAMA :");
+		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 12));
+		lblNewLabel_1.setBounds(38, 55, 50, 14);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("NIM :");
+		lblNewLabel_2.setFont(new Font("Times New Roman", Font.BOLD, 12));
+		lblNewLabel_2.setBounds(48, 86, 62, 14);
+		contentPane.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("JURUSAN :");
+		lblNewLabel_3.setFont(new Font("Times New Roman", Font.BOLD, 12));
+		lblNewLabel_3.setBounds(19, 111, 69, 14);
+		contentPane.add(lblNewLabel_3);
+		
+		textField = new JTextField();
+		textField.setBounds(87, 55, 170, 20);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(87, 86, 170, 20);
+		contentPane.add(textField_1);
+		textField_1.setColumns(10);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"", "INFORMATIKA", "TEKNIK KOMPUTER", "SISTEM INFORMASI "}));
+		comboBox.setBounds(87, 111, 132, 22);
+		contentPane.add(comboBox);
+		
+		JButton btnNewButton = new JButton("Save");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				 String n = textField.getText();
+		         String a = textField_1.getText();
+		            String b = comboBox.getSelectedItem().toString();
+
+		            // Menampilkan input di lblNewLabel_4
+		            lblNewLabel_4.setText("NAMA: " + n );
+		            lblNewLabel_5.setText("NIM: " + a);
+		            lblNewLabel_6.setText("JURUSAN: "+b);
+		            lblNewLabel_7.setText("data tersimpan");
+		            
+					
+			}
+		});
+		btnNewButton.setBounds(38, 229, 89, 23);
+		contentPane.add(btnNewButton);
+		
+		
+		JButton btnNewButton_1 = new JButton("Reset");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textField.setText("");
+				textField_1.setText("");
+				comboBox.setSelectedIndex(0);
+				
+			}
+		});
+		btnNewButton_1.setBounds(289, 229, 89, 23);
+		contentPane.add(btnNewButton_1);
+		
+	    lblNewLabel_4 = new JLabel("1");
+		lblNewLabel_4.setFont(new Font("Times New Roman", Font.BOLD, 11));
+		lblNewLabel_4.setBounds(38, 136, 257, 22);
+		contentPane.add(lblNewLabel_4);
+		
+		lblNewLabel_5 = new JLabel("2");
+		lblNewLabel_5.setFont(new Font("Times New Roman", Font.BOLD, 11));
+		lblNewLabel_5.setBounds(38, 169, 257, 22);
+		contentPane.add(lblNewLabel_5);
+		
+		lblNewLabel_6 = new JLabel("3");
+		lblNewLabel_6.setFont(new Font("Times New Roman", Font.BOLD, 11));
+		lblNewLabel_6.setBounds(38, 196, 257, 22);
+		contentPane.add(lblNewLabel_6);
+		
+		lblNewLabel_7 = new JLabel("");
+		lblNewLabel_7.setBounds(160, 229, 97, 23);
+		contentPane.add(lblNewLabel_7);
+		
+		
+		
+
+		
+		 
+		
+		
+				
+	}
+	}
